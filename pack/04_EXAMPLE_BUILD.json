@@ -1,0 +1,364 @@
+{
+ "tableAidBuild": 1,
+ "data": {
+  "title": "The Long Dark",
+  "sub": "A test build",
+  "theme": {
+   "name": "slate",
+   "mode": "dark"
+  },
+  "party": {
+   "size": 4,
+   "level": 6,
+   "items": {},
+   "itemPct": {}
+  },
+  "chapters": [
+   {
+    "id": "c1",
+    "name": "Chapter One — The Hiring",
+    "sub": "Segments 1–2",
+    "open": true
+   },
+   {
+    "id": "c2",
+    "name": "Chapter Two — Underground",
+    "sub": "Segments 3–5",
+    "open": true
+   }
+  ],
+  "scenes": [
+   {
+    "ch": "c1",
+    "a": "0:00",
+    "b": "0:25",
+    "t": "The hiring — too much money",
+    "note": "They are offered three times the going rate and nobody will say why.",
+    "keys": [
+     "The offer is absurd and the client will not explain it — let them push",
+     "Name the two other crews who turned it down"
+    ]
+   },
+   {
+    "ch": "c1",
+    "a": "0:25",
+    "b": "1:00",
+    "t": "Descent to the flooded gallery",
+    "note": "First Long Dark save happens here if they let the lamp go out.",
+    "keys": [
+     "★ First Long Dark save — DC 10, and make it feel cheap so the DC 18 lands later",
+     "The water is waist deep and rising a foot an hour"
+    ],
+    "ai": true,
+    "aiOk": false,
+    "aiNote": "Filled in the key beats — your notes describe this scene in prose but do not say what the DM must remember."
+   },
+   {
+    "ch": "c2",
+    "a": "1:00",
+    "b": "1:40",
+    "t": "FIGHT: the drowned choir",
+    "note": "They are already singing when the party arrives.",
+    "keys": [
+     "They are singing before initiative — everyone entering saves immediately",
+     "★ Killing one silences that voice; the harmony is the damage"
+    ]
+   },
+   {
+    "ch": "c2",
+    "a": "1:40",
+    "b": "2:10",
+    "t": "Rescue the surveyor",
+    "note": "Ilse trades the vault combination for being carried out.",
+    "keys": [
+     "Ilse will not be moved without a stretcher — someone loses their hands for the fight",
+     "She knows the combination and says so immediately. The price is the carrying."
+    ]
+   },
+   {
+    "ch": "c2",
+    "a": "2:10",
+    "b": "3:00",
+    "t": "FIGHT: the thing in the pump room",
+    "note": "Opening the floor grate drains the water and switches off its regeneration.",
+    "keys": [
+     "★ The grate is the fight. Anyone who looks at the floor can see it",
+     "It regains 10 HP a turn while standing in water — the pop-up will remind you"
+    ],
+    "ai": true,
+    "aiOk": false,
+    "aiNote": "Added — your run sheet lists this fight but never says how it is meant to be beaten; the grate is my invention."
+   }
+  ],
+  "mon": [
+   {
+    "n": "Drowned Chorister",
+    "t": "Medium Undead, Neutral Evil",
+    "cr": "3",
+    "xp": 700,
+    "ac": 13,
+    "hp": 45,
+    "hd": "7d8+14",
+    "dex": 1,
+    "conSv": 5,
+    "sp": "20 ft., swim 30 ft.",
+    "ab": [
+     14,
+     12,
+     16,
+     6,
+     10,
+     8
+    ],
+    "grp": "The Choir",
+    "side": "foe",
+    "lines": [
+     "<span class='k'>Saves</span> Con +5 · <span class='k'>PP</span> 10",
+     "<span class='k'>Multiattack.</span> Two slams. <span class='k'>Slam</span> +5, reach 5 ft, 1d8+2 bludgeoning.",
+     "<span class='k'>Drowning Song.</span> 30 ft, DC 13 Wis, 2d6 psychic and no reactions until the end of its next turn."
+    ],
+    "trig": {
+     "combat": [
+      {
+       "n": "Already singing",
+       "w": "They started before the party arrived. Everyone who enters the gallery makes one Drowning Song save immediately, before initiative.",
+       "k": "rem"
+      }
+     ]
+    }
+   },
+   {
+    "n": "Sump Warden",
+    "t": "Large Construct, Unaligned",
+    "cr": "8",
+    "xp": 3900,
+    "ac": 17,
+    "hp": 130,
+    "hd": "15d10+45",
+    "dex": 0,
+    "conSv": 7,
+    "sp": "30 ft.",
+    "ab": [
+     20,
+     10,
+     17,
+     3,
+     11,
+     1
+    ],
+    "grp": "The Works",
+    "side": "foe",
+    "legRes": 2,
+    "lines": [
+     "<span class='k'>Saves</span> Con +7 · <span class='k'>PP</span> 10",
+     "<span class='k'>Multiattack.</span> Two piston strikes. <span class='k'>Piston</span> +8, reach 10 ft, 2d10+5 bludgeoning.",
+     "<span class='k'>Pressure Burst (Recharge 5–6).</span> 20 ft, DC 16 Dex, 6d8 bludgeoning, half on a save."
+    ],
+    "trig": {
+     "turn": [
+      {
+       "n": "Sump Regeneration",
+       "w": "Regains 10 hit points at the start of its turn while standing in water. Draining the room switches this off.",
+       "k": "auto",
+       "heal": 10
+      }
+     ]
+    },
+    "ai": true,
+    "aiOk": false,
+    "aiNote": "Statted at CR 8 — you gave the name, the regeneration and 'the big one', so every other number here is mine."
+   },
+   {
+    "n": "Ilse Marrant",
+    "t": "Medium Humanoid, Lawful Good",
+    "cr": "1",
+    "xp": 200,
+    "ac": 12,
+    "hp": 22,
+    "hd": "4d8+4",
+    "dex": 2,
+    "conSv": 1,
+    "sp": "20 ft. (broken ankle)",
+    "ab": [
+     10,
+     14,
+     12,
+     15,
+     13,
+     11
+    ],
+    "grp": "Survivors",
+    "side": "ally",
+    "lines": [
+     "<span class='k'>Skills</span> Investigation +4, Survival +3 · <span class='k'>PP</span> 11",
+     "<span class='k'>Knows the way.</span> Has the vault combination and will trade it for being carried out.",
+     "<span class='k'>Dagger.</span> +4, 1d4+2 piercing. She is not a combatant and says so."
+    ],
+    "ai": true,
+    "aiOk": false,
+    "aiNote": "Statted at CR 1 — you described Ilse but gave no numbers, and the rescue needs something on the initiative list."
+   }
+  ],
+  "enc": [
+   {
+    "n": "Fight 1 — the drowned choir",
+    "loc": "Flooded gallery",
+    "note": "They are singing before initiative. The water is difficult terrain in the middle third.",
+    "m": [
+     [
+      "Drowned Chorister",
+      5
+     ]
+    ],
+    "map": {
+     "t": "Flooded gallery",
+     "scale": "20 x 12 squares - 100 ft x 60 ft",
+     "draw": "Two walkways with water down the middle third. Pillars every four squares. Stairs at the east end.",
+     "rows": [
+      "####################",
+      "#..o....o....o....s#",
+      "#.................s#",
+      "#~~~~~~~~~~~~~~~..s#",
+      "#~~~~~~~~~~~~~~~~..#",
+      "#~~~~~~~~~~~~~~~~..#",
+      "#~~~~~~~~~~~~~~~~..#",
+      "#~~~~~~~~~~~~~~~~..#",
+      "#..................#",
+      "#..o....o....o.....#",
+      "#..................#",
+      "####################"
+     ],
+     "tok": [
+      {
+       "x": 4,
+       "y": 4,
+       "l": "C",
+       "s": "foe",
+       "n": "Chorister"
+      },
+      {
+       "x": 8,
+       "y": 5,
+       "l": "C",
+       "s": "foe",
+       "n": "Chorister"
+      },
+      {
+       "x": 12,
+       "y": 4,
+       "l": "C",
+       "s": "foe",
+       "n": "Chorister"
+      },
+      {
+       "x": 17,
+       "y": 1,
+       "l": "P",
+       "s": "pc",
+       "n": "Party"
+      }
+     ]
+    },
+    "ai": true,
+    "aiOk": false,
+    "aiNote": "Guessed the map from 'a long hall, water down the middle, pillars, stairs at the east end' — everything past that sentence is invented."
+   },
+   {
+    "n": "Fight 2 — the thing in the pump room",
+    "loc": "Pump room",
+    "note": "Opening the grate drains the water and switches off its regeneration.",
+    "m": [
+     [
+      "Sump Warden",
+      1
+     ],
+     [
+      "Drowned Chorister",
+      2
+     ]
+    ]
+   }
+  ],
+  "tools": [
+   {
+    "id": "longdark",
+    "name": "The Long Dark",
+    "rule": "Every hour underground without a lit flame, everyone saves.",
+    "trigger": "At the end of every hour spent underground with no open flame among the party, each creature makes a Wisdom saving throw. The tier is how many hours they have gone dark, not how deep they are.",
+    "cols": [
+     "Hours dark",
+     "DC",
+     "On a failure",
+     "On a success"
+    ],
+    "rows": [
+     [
+      "1–2 hours",
+      "10",
+      "Disadvantage on Perception",
+      "No effect"
+     ],
+     [
+      "3–5 hours",
+      "14",
+      "1 Exhaustion, roll on Whispers",
+      "Disadvantage on Perception"
+     ],
+     [
+      "6+ hours",
+      "18",
+      "2 Exhaustion, and you hear your own name",
+      "1 Exhaustion"
+     ]
+    ],
+    "dcCol": 1,
+    "ability": "Wisdom",
+    "res": {
+     "on": true,
+     "amountLabel": "Hours dark",
+     "amount": 1,
+     "unit": 1,
+     "advLabel": "",
+     "advUnit": 0
+    },
+    "dtable": {
+     "name": "Whispers (d6)",
+     "die": 6,
+     "items": [
+      "Someone calls you from behind.",
+      "Your lantern was never lit.",
+      "You have been here before.",
+      "The walls are breathing.",
+      "You are alone.",
+      "You are not."
+     ]
+    },
+    "notes": [
+     {
+      "t": "Relighting",
+      "b": "A new flame ends the count. It does not remove exhaustion."
+     }
+    ]
+   }
+  ],
+  "cards": [
+   {
+    "id": "h_gauge",
+    "name": "The needle gauge",
+    "img": "",
+    "text": "A brass needle on a dial, and beneath it, stamped into the plate:\n\n“WHEN IT IS LIGHT ENOUGH, IT OPENS.”",
+    "dm": "The pan is already loaded with a century of offerings under the dust. DC 15 Investigation to notice.\nSOLUTION: everyone leaves the room carrying less than they walked in with. Adding weight tightens the bands instead."
+   },
+   {
+    "id": "h_note",
+    "name": "The surveyor's last note",
+    "img": "",
+    "text": "water rising faster than the pumps\nthe warden does not sleep\nif you are reading this the grate is the answer\n— I.M.",
+    "dm": "Invented handout — hand this out only if the party misses the grate twice. It is the third and last nudge.",
+    "ai": true,
+    "aiOk": false,
+    "aiNote": "Invented — your notes never mention a written clue, and this is the safety net if the party misses the grate."
+   }
+  ]
+ }
+}
