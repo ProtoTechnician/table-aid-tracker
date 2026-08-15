@@ -1,0 +1,21 @@
+# generated scratch
+build/art/
+build/manual.html
+build/__pycache__/
+*.pyc
+
+# session files people will inevitably drop in here
+*-session.json
+table-aid-backup-*.json
+*-recap.md
+
+# the personal campaign build the blank is generated from — see README
+abyss_tracker.html
+
+# not for publication
+private/
+ledger.csv
+
+# OS noise
+.DS_Store
+Thumbs.db

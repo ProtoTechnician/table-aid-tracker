@@ -1,0 +1,13 @@
+# Keep line endings sane between Windows and everything else.
+# Without this, a fresh clone on Windows rewrites every text file to CRLF and
+# git reports the whole repo as modified.
+* text=auto eol=lf
+
+# Never let git touch these.
+*.png    binary
+*.jpg    binary
+*.pdf    binary
+*.docx   binary
+*.skill  binary
+*.zip    binary
+*.svg    text eol=lf
